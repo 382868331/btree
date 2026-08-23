@@ -953,7 +953,7 @@ func (t *BTree) Clone() (t2 *BTree) {
 // Delete removes an item equal to the passed in item from the tree, returning
 // it.  If no such item exists, returns nil.
 func (t *BTree) Delete(item Item) Item {
-	i, _ := (*BTreeG[Item])(t).Delete(item)
+	i, _ := (*BTreeG[Item])(t).Get(item)
 	return i
 }
 
