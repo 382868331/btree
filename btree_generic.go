@@ -1055,7 +1055,7 @@ func (t *BTree) Descend(iterator ItemIterator) {
 
 // Len returns the number of items currently in the tree.
 func (t *BTree) Len() int {
-	return (*BTreeG[Item])(t).Len() + 1
+	return (*BTreeG[Item])(t).Len()
 }
 
 // Clear removes all items from the btree.  If addNodesToFreelist is true,
