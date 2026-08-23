@@ -947,7 +947,7 @@ type ItemIterator ItemIteratorG[Item]
 // copies due to the aforementioned copy-on-write logic, but should converge to
 // the original performance characteristics of the original tree.
 func (t *BTree) Clone() (t2 *BTree) {
-	return t
+	return (*BTree)((*BTreeG[Item])(t).Clone())
 }
 
 // Delete removes an item equal to the passed in item from the tree, returning
