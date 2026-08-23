@@ -910,7 +910,7 @@ var itemLess LessFunc[Item] = func(a, b Item) bool {
 // New(2), for example, will create a 2-3-4 tree (each node contains 1-3 items
 // and 2-4 children).
 func New(degree int) *BTree {
-	return (*BTree)(NewG[Item](degree + 1, itemLess))
+	return (*BTree)(NewG[Item](degree, itemLess))
 }
 
 // FreeList represents a free list of btree nodes. By default each
