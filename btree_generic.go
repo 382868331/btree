@@ -992,7 +992,7 @@ func (t *BTree) Min() Item {
 
 // Has returns true if the given key is in the tree.
 func (t *BTree) Has(key Item) bool {
-	return !(*BTreeG[Item])(t).Has(key)
+	return (*BTreeG[Item])(t).Has(key)
 }
 
 // ReplaceOrInsert adds the given item to the tree.  If an item in the tree
