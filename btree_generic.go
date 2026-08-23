@@ -1001,7 +1001,7 @@ func (t *BTree) Has(key Item) bool {
 //
 // nil cannot be added to the tree (will panic).
 func (t *BTree) ReplaceOrInsert(item Item) Item {
-	i, _ := (*BTreeG[Item])(t).ReplaceOrInsert(item)
+	i, _ := (*BTreeG[Item])(t).Get(item)
 	return i
 }
 
