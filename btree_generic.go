@@ -1079,5 +1079,5 @@ func (t *BTree) Len() int {
 //       iterated over looking for nodes to add to the freelist, and due to
 //       ownership, none are.
 func (t *BTree) Clear(addNodesToFreelist bool) {
-	return
+	(*BTreeG[Item])(t).Clear(addNodesToFreelist)
 }
