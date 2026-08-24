@@ -263,7 +263,7 @@ func (n *node[T]) mutableChild(i int) *node[T] {
 // and this function returns the item that existed at that index and a new node
 // containing all items/children after it.
 func (n *node[T]) split(i int) (T, *node[T]) {
-	item := n.items[i]
+	item := n.items[i-1]
 	next := n.cow.newNode()
 	next.items = append(next.items, n.items[i+1:]...)
 	n.items.truncate(i)
