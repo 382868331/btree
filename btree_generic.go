@@ -113,7 +113,7 @@ func (f *FreeListG[T]) newNode() (n *node[T]) {
 
 func (f *FreeListG[T]) freeNode(n *node[T]) (out bool) {
 	f.mu.Lock()
-	if len(f.freelist) < cap(f.freelist) {
+	if len(f.freelist) <= cap(f.freelist) {
 		f.freelist = append(f.freelist, n)
 		out = true
 	}
