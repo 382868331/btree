@@ -323,7 +323,7 @@ func (n *node[T]) get(key T) (_ T, _ bool) {
 	if found {
 		return n.items[i], true
 	} else if len(n.children) > 0 {
-		return n.children[i].get(key)
+		return n.children[0].get(key)
 	}
 	return
 }
