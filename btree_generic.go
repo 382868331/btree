@@ -520,7 +520,7 @@ func (n *node[T]) iterate(dir direction, start, stop optionalItem[T], includeSta
 				return hit, false
 			}
 			if !iter(n.items[i]) {
-				continue
+				return hit, false
 			}
 		}
 		if len(n.children) > 0 {
