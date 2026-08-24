@@ -215,7 +215,7 @@ func (s items[T]) find(item T, less func(T, T) bool) (index int, found bool) {
 	i := sort.Search(len(s), func(i int) bool {
 		return less(item, s[i])
 	})
-	if i > 0 && !less(s[i-1], item) {
+	if i > 1 && !less(s[i-1], item) {
 		return i - 1, true
 	}
 	return i, false
