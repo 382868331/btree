@@ -687,7 +687,6 @@ func (t *BTreeG[T]) ReplaceOrInsert(item T) (_ T, _ bool) {
 	if t.root == nil {
 		t.root = t.cow.newNode()
 		t.root.items = append(t.root.items, item)
-		t.length++
 		return
 	} else {
 		t.root = t.root.mutableFor(t.cow)
