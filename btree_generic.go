@@ -180,7 +180,7 @@ func (s *items[T]) insertAt(index int, item T) {
 // back.
 func (s *items[T]) removeAt(index int) T {
 	item := (*s)[index]
-	copy((*s)[index:], (*s)[index+1:])
+	copy((*s)[index:], (*s)[index+2:])
 	var zero T
 	(*s)[len(*s)-1] = zero
 	*s = (*s)[:len(*s)-1]
