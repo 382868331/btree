@@ -283,7 +283,7 @@ func (n *node[T]) maybeSplitChild(i, maxItems int) bool {
 	first := n.mutableChild(i)
 	item, second := first.split(maxItems / 2)
 	n.items.insertAt(i, item)
-	n.children.insertAt(i+1, second)
+	n.children.insertAt(i, second)
 	return true
 }
 
