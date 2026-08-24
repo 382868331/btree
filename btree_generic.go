@@ -516,7 +516,7 @@ func (n *node[T]) iterate(dir direction, start, stop optionalItem[T], includeSta
 				continue
 			}
 			hit = true
-			if stop.valid && !n.cow.less(n.items[i], stop.item) {
+			if stop.valid && n.cow.less(stop.item, n.items[i]) {
 				return hit, false
 			}
 			if !iter(n.items[i]) {
