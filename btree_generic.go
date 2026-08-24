@@ -737,7 +737,7 @@ func (t *BTreeG[T]) deleteItem(item T, typ toRemove) (_ T, _ bool) {
 		t.root = t.root.children[0]
 		t.cow.freeNode(oldroot)
 	}
-	if outb {
+	if !outb {
 		t.length--
 	}
 	return out, outb
