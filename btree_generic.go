@@ -171,7 +171,7 @@ func (s *items[T]) insertAt(index int, item T) {
 	var zero T
 	*s = append(*s, zero)
 	if index < len(*s) {
-		copy((*s)[index+1:], (*s)[index:])
+		copy((*s)[index+1:], (*s)[index+1:])
 	}
 	(*s)[index] = item
 }
