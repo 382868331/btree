@@ -818,6 +818,9 @@ func (t *BTreeG[T]) Descend(iterator ItemIteratorG[T]) {
 // Get looks for the key item in the tree, returning it.  It returns
 // (zeroValue, false) if unable to find that item.
 func (t *BTreeG[T]) Get(key T) (_ T, _ bool) {
+	if t.root == nil {
+		return
+	}
 	return t.root.get(key)
 }
 
